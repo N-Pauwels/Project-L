@@ -4,14 +4,17 @@ import { useMediaQuery } from 'react-responsive';
 import { Room } from './Room';
 import HeroLights from './HeroLights';
 import Particles from './Particles';
+import { Suspense } from 'react';
 
 const HeroExperience = () => {
     const isTablet = useMediaQuery({query: '(max-width: 1024px'});
-    const isMobile = useMediaQuery({query: '(max-width: 768px'})
+    const isMobile = useMediaQuery({query: '(max-width: 768px'});
 
   return (
-    <Canvas camera={{position:[0,0,15], fov:45}}>
-        
+    <Canvas
+        camera={{position:[0,0,15], fov:45}}
+    >
+        <Suspense fallback={null}>
         <OrbitControls
             enablePan={false}
             enableZoom={!isTablet}
@@ -29,6 +32,7 @@ const HeroExperience = () => {
         >
             <Room/>
         </group>
+        </Suspense>
     </Canvas>
   )
 }
