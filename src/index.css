@@ -8,7 +8,8 @@
 html,
 body {
   width: 100dvw;
-  overflow-x: hidden;
+  overflow-x: clip;
+  /* overflow-x: hidden; //causes stuttering on the page*/
   background-color: black;
   color: white;
   scroll-behavior: smooth;
@@ -17,6 +18,11 @@ body {
 
 section {
   width: 100dvw;
+}
+
+canvas {
+  pointer-events: none;
+  touch-action: none;
 }
 
 @theme {
