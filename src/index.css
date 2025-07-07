@@ -20,11 +20,6 @@ section {
   width: 100dvw;
 }
 
-canvas {
-  pointer-events: none;
-  touch-action: none;
-}
-
 @theme {
   --font-sans: "Mona Sans", sans-serif;
   --color-white-50: #d9ecff;
