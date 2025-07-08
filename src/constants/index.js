@@ -114,35 +114,36 @@ const techStackImgs = [
 
 const techStackIcons = [
   {
-    name: "React Developer",
-    modelPath: "/models/react_logo-transformed.glb",
-    scale: 1,
+    name: "TikTok",
+    modelPath: "/models/tiktok_logo.glb",
+    scale: 8,
+    rotation: [0, 0, 0],
+    position:[-5.5,-2.5,0]
+  },
+  {
+    name: "Spotify",
+    modelPath: "/models/spotify.glb",
+    scale: 2,
     rotation: [0, 0, 0],
   },
   {
-    name: "Python Developer",
-    modelPath: "/models/python-transformed.glb",
-    scale: 0.8,
-    rotation: [0, 0, 0],
-  },
-  {
-    name: "Backend Developer",
-    modelPath: "/models/node-transformed.glb",
-    scale: 5,
+    name: "Instagram",
+    modelPath: "/models/instagram.glb",
+    scale: 2,
     rotation: [0, -Math.PI / 2, 0],
   },
-  {
-    name: "Interactive Developer",
-    modelPath: "/models/three.js-transformed.glb",
-    scale: 0.05,
-    rotation: [0, 0, 0],
-  },
-  {
-    name: "Project Manager",
-    modelPath: "/models/git-svg-transformed.glb",
-    scale: 0.05,
-    rotation: [0, -Math.PI / 4, 0],
-  },
+  // {
+  //   name: "Interactive Developer",
+  //   modelPath: "/models/tiktok.glb",
+  //   scale: 1,
+  //   rotation: [0, 0, 0],
+  // },
+  // {
+  //   name: "Project Manager",
+  //   modelPath: "/models/git-svg-transformed.glb",
+  //   scale: 0.05,
+  //   rotation: [0, -Math.PI / 4, 0],
+  // },
 ];
 
 const expCards = [
