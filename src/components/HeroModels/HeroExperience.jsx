@@ -5,6 +5,7 @@ import { Room } from './Room';
 import HeroLights from './HeroLights';
 import Particles from './Particles';
 import { Suspense } from 'react';
+import Moon from './Moon';
 
 const HeroExperience = () => {
     const isTablet = useMediaQuery({query: '(max-width: 1024px'});
@@ -26,6 +27,10 @@ const HeroExperience = () => {
         /> */}
         <HeroLights/>
         <Particles count={100}/>
+        <Moon
+            position={[-2,5,-10]}
+            scale={0.2}
+        />
         <group
             scale={isMobile? 0.7 : 1}
             position={[0,-3.5,0]}

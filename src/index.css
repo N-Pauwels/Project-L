@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap&family=Cinzel:wght@900");
 @import "tailwindcss";
 
 :root {
@@ -22,6 +22,7 @@ section {
 
 @theme {
   --font-sans: "Mona Sans", sans-serif;
+  --font-cinzel: "Cinzel", "sans-serif";
   --color-white-50: #d9ecff;
   --color-black-50: #1c1c21;
   --color-black-100: #0e0e10;
@@ -470,4 +471,22 @@ section {
 
 .card:hover::before {
   opacity: 1;
+}
+
+/* added */
+
+.cinzel-epic{
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  /* font-size: 150px; */
+}
+
+.moon-cover-right{
+  clip-path: polygon(29% 0, 100% 0, 100% 100%, 18% 100%);
+}
+
+.moon-cover-left{
+  clip-path: polygon(0 0, 29% 0, 18% 100%, 0 100%);
 }
