@@ -1,7 +1,8 @@
 import { useTexture } from '@react-three/drei';
 import * as THREE from 'three'
+import { forwardRef } from 'react';
 
-const Moon = (props) => {
+const Moon = forwardRef((props, ref) => {
     const moonTexture = useTexture('/models/moon/moon.jpg');
     const normalTexture = useTexture('/models/moon/normal.jpg')
 
@@ -13,13 +14,13 @@ const Moon = (props) => {
 
 
   return (
-    <group {...props} dispose={null}>
+    <group ref={ref} {...props} dispose={null}>
         <mesh
             geometry={sphere}
             material={moon}
         />
     </group>
   )
-}
+})
 
 export default Moon
