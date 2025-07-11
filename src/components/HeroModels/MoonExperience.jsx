@@ -7,6 +7,7 @@ import Moon from './Moon';
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import gsap from 'gsap'
+import Explosion from './Explosion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,6 +60,7 @@ const MoonExperience = () => {
             position={params.position}
             scale={params.scale}
         />
+        <Explosion/>
         </Suspense>
     </Canvas>
   )

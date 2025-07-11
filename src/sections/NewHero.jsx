@@ -3,10 +3,12 @@ import MoonExperience from '../components/HeroModels/MoonExperience.jsx'
 import AboutMe from './AboutMe.jsx'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Button from '../components/Button.jsx'
 
 gsap.registerPlugin(ScrollTrigger);
 
 const NewHero = () => {
+    const screenWidth = window.screen.width;
     useGSAP(()=>{
         const tl = gsap.timeline({scrollTrigger:{
             trigger:"#new-hero",
@@ -17,15 +19,24 @@ const NewHero = () => {
         const tl2=gsap.timeline({scrollTrigger:{
             trigger:"#new-hero",
             start: "30% top",
-            end:"40% top",
+            end:"50% top",
             scrub: true
         }})
 
         tl.to("#text-la",{x:-750})
         .to("#text-moon",{x:750},'<')
 
-        tl2.from("#text-la-head",{x:-750})
-        .from("#text-moon-head",{x:1000},'<')
+        tl2.from("#text-la-head",{x:-750,y:-200})
+        .from("#text-moon-head",{x:screenWidth+100,y:-200},'<')
+
+        gsap.to(window,{
+            ease: 'power2.inOut',
+            scrollTrigger:{
+                trigger:"#new-hero",
+                start:"top 5%",
+                snap:{snapTo:[0,0.52,1]}
+            }
+        })
     },[])
 
   return (
@@ -48,6 +59,13 @@ const NewHero = () => {
         <div className="sticky top-0 z-10 xl:mt-20 mt-32 md:h-dvh h-[80vh] flex xl:items-center items-start justify-center">
             <MoonExperience/>
         </div>
+        <Button
+            className="absolute bottom-[60%] w-100 h-12"
+            id="button"
+            text="See more below"
+            scrollId='about-me'
+            offset={-window.innerHeight * 0.10}
+        />
         <AboutMe/>
     </section>
   )

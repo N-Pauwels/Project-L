@@ -58,6 +58,8 @@ const Hero = () => {
               className="md:w-80 md:h-16 w-60 h-12"
               id="button"
               text="See more below"
+              scrollId='counter'
+              offset={window.innerHeight * 0.15}
             />
           </div>
         </header>
