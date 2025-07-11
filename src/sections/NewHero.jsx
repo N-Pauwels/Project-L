@@ -64,7 +64,7 @@ const NewHero = () => {
             id="button"
             text="See more below"
             scrollId='about-me'
-            offset={-window.innerHeight * 0.10}
+            offset={-window.innerHeight * 0.01}
         />
         <AboutMe/>
     </section>
