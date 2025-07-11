@@ -7,7 +7,7 @@ import Button from '../components/Button.jsx'
 
 gsap.registerPlugin(ScrollTrigger);
 
-const NewHero = () => {
+const NewHero = ({ready, setReady}) => {
     const screenWidth = window.screen.width;
     useGSAP(()=>{
         const tl = gsap.timeline({scrollTrigger:{
@@ -57,7 +57,10 @@ const NewHero = () => {
             </div>
         </div>
         <div className="sticky top-0 z-10 xl:mt-20 mt-32 md:h-dvh h-[80vh] flex xl:items-center items-start justify-center">
-            <MoonExperience/>
+            <MoonExperience
+                ready={ready}
+                setReady={setReady}
+            />
         </div>
         <Button
             className="absolute bottom-[60%] w-100 h-12"
