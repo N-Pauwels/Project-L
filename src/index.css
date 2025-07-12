@@ -38,6 +38,13 @@ section {
   .flex-col-center {
     @apply flex flex-col justify-center items-center;
   }
+  .about-subtext {
+    @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-cinzel text-lg md:max-w-[34rem];
+  }
+
+  .about-image {
+    @apply absolute left-1/2 top-0 z-20 h-[362px] w-[215px] origin-center -translate-x-1/2 overflow-hidden rounded-3xl border-4 border-white;
+  }
 }
 
 @layer components {
@@ -526,3 +533,7 @@ section {
   0%   { height: 48px} 
   100% { height: 4px}
 }
+
+  .mask-clip-path {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
