@@ -12,6 +12,20 @@ gsap.registerPlugin(ScrollTrigger);
 
 const MySkills = () => {
 
+    function getGradient (arr){
+        const reverse = arr.toReversed();
+        const gradient = reverse.reduce((acc, el, index, array)=>{
+            const {color} = el;
+            const length = array.length;
+            const percentage = (100 / length * (index + 1)).toFixed(2);
+            let newStr = acc.concat(color,"_",percentage,"%");
+            newStr = index + 1 === length ? newStr.concat("]") : newStr.concat(",");
+            return newStr
+
+        },"bg-linear-[0deg,rgba(69,222,196,0)_0%,")
+        return gradient
+    }
+
     useGSAP(()=>{
         gsap.utils.toArray('.timeline-card').forEach((card)=>{
             gsap.from(card, {
@@ -101,7 +115,7 @@ const MySkills = () => {
             />
             <div className="mt-32 relative">
                 <div className="relative z-50 xl:space-y-32 space-y-10">
-                    {skillCards.map((card, index)=>(
+                    {skillCards.map((card, index, array)=>(
                         <div key={index} id={`card-box-${index}`} className="exp-card-wrapper">
                             <div className="xl:w-2/6 min-h-[296px]">
                                 <GlowCard
@@ -114,7 +128,7 @@ const MySkills = () => {
                                 <div className="flex items-start">
                                     <div className="timeline-wrapper">
                                         <div className="timeline"/>
-                                        <div className="bg-linear-[0deg,rgba(69,222,196,0)_0%,#d2701b_16.66%,#cece45_33.33%,#62e0ff_50%,#36dc49_66.66%,#fd5c79_83.33%,#6d45ce_100%] w-1 h-full" />
+                                        <div className={`${getGradient(array)} w-1 h-full`}/>
                                     </div>
                                     <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
                                         <div className={`timeline-logo ${card.className}`} >
