@@ -9,7 +9,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const TechStack = () => {
-    const cols = useMemo(()=> techStackIcons.length,[techStackIcons])
 
     useGSAP(()=>{
         gsap.fromTo('.tech-card',{
@@ -35,7 +34,7 @@ const TechStack = () => {
                 title="Social Media"
                 sub="Where you can follow me"
             />
-            <div className={`tech-grid xl:grid-cols-${cols} xl:mx-${45*(5 % Math.min(cols,5))}`}>
+            <div className={`tech-grid xl:mx-80 xl:grid-cols-3`}>
                 {techStackIcons.map((icon,index)=>(
                     <div key={index} className="card-border tech-card overflow-hidden group xl:rounded-full rounded-lg">
                         <div className="tech-card-animated-bg"/>
