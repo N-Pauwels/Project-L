@@ -146,6 +146,47 @@ const techStackIcons = [
   // },
 ];
 
+const skillCards = [
+  {
+    name: 'singer',
+    explanation:(<>A voice shaped by emotion and air, bending notes into meaning. The Singer channels the soul’s deepest tides into sound — not just to perform, but to feel out loud. Every breath becomes a canvas, every melody a confession.</>),
+    title:'The Singer',
+    imgPath:'/images/cards/singer.png',
+  },
+  {
+    name: 'writer',
+    explanation:(<>Where silence finds structure, the Writer weaves truth and imagination into language<br/>Each word is a spell, every lyric a blade or a balm. The pen is not a tool, but a tuning fork for the heart’s secret frequencies.</>),
+    title:'The Writer',
+    imgPath:'/images/cards/writer.png',
+  },
+  {
+    name: 'producer',
+    explanation:(<>The unseen architect.<br/>The Producer is both sculptor and alchemist, transforming raw sound into atmosphere. Layers of rhythm, silence, and tone are arranged like constellations — guiding the listener through unseen worlds.</>),
+    title:'The Producer',
+    imgPath:'/images/cards/producer.png',
+
+  },
+  {
+    name: 'pianist',
+    explanation:(<>Ten fingers, eighty-eight keys — yet infinite possibilities.<br/>The Pianist speaks without speaking, shaping harmony and tension into living sculpture. Their touch evokes landscapes: fragile, fierce, and filled with ghosts that dance between notes.</>),
+    title:'The Pianist',
+    imgPath:'/images/cards/pianist.png',
+  },
+  {
+    name: 'composer',
+    explanation:(<>From chaos, form.<br/>The Composer listens to what isn’t yet real — drawing maps of feeling, time, and motion. They design sound like an architect drafts space: intentionally, spiritually, one heartbeat at a time.</>),
+    title:'The Composer',
+    imgPath:'/images/cards/pianist.png',
+  },
+  {
+    name: 'musician',
+    explanation:(<>The sum of all the fragments.<br/>The Musician is a channel for movement, for memory, for mood. They are the conduit where instrument and instinct blur — creating not just music, but moment.</>),
+    title:'The Musician',
+    imgPath:'/images/cards/pianist.png',
+  }
+
+  ]
+
 const expCards = [
   {
     review:
@@ -277,6 +318,7 @@ export {
   logoIconsList,
   counterItems,
   expCards,
+  skillCards,
   expLogos,
   testimonials,
   socialImgs,

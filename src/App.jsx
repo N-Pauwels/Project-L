@@ -8,6 +8,7 @@ import TechStack from './sections/TechStack.jsx'
 import NewHero from './sections/NewHero.jsx'
 import Loader from './components/Loader.jsx'
 import { useState } from 'react'
+import MySkills from './sections/MySkills.jsx'
 
 const App = () => {
   const [ready,setReady] = useState(false)
@@ -21,7 +22,8 @@ const App = () => {
       />
       {/* <Hero/> */}
       <Picture/>
-      <Experience/>
+      <MySkills/>
+      {/* <Experience/> */}
       <ShowcaseSection/>
       <FeatureCards/>
       <TechStack/>

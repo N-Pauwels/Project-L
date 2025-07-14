@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react"
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import MySkills from "./MySkills"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -10,7 +11,6 @@ const Picture = () => {
       trigger:'#clip',
       start: '25% center',
       end:'+=800 center',
-      markers:true,
       scrub: true,
       pin: true,
       pinSpacing: true
@@ -22,10 +22,19 @@ const Picture = () => {
       borderRadius: 0,
       borderWidth: 0
     })
+    .to('.mask-clip-path',{
+      opacity:0,
+      duration:0
+    },'>')
+    .to('#back-image',{
+      opacity:1,
+      duration:0,
+    },'<')
 
   },[])
+  
   return (
-    <div id="picture" className="min-h-screen w-screen">
+    <div id="picture" className="relative min-h-screen w-screen">
       <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
         <h2 className="font-cinzel text-xl">
           Welcome to my site
@@ -34,7 +43,7 @@ const Picture = () => {
           Discover my passion for music
         </div>
       </div>
-      <div className="relative h-dvh w-screen flex items-center justify-center" id="clip">
+      <div className="relative h-[50vh] z-20 w-screen flex items-center justify-center perspective-distant" id="clip">
         <div className="mask-clip-path about-image">
           <img
             src="/images/about.webp"
@@ -43,6 +52,7 @@ const Picture = () => {
           />
         </div>
       </div>
+      {/* <MySkills/> */}
     </div>
   )
 }

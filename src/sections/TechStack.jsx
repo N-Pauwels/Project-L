@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import TitleHeader from '../components/TitleHeader.jsx'
-import { techStackIcons } from '../constants/index.js'
+import { techStackIcons } from '../constants'
 import TechIcon from '../components/models/TechLogos/TechIcon.jsx'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'

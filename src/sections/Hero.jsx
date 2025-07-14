@@ -1,4 +1,4 @@
-import { words } from '../constants/index.js'
+import { words } from '../constants'
 import Button from '../components/Button.jsx'
 import HeroExperience from '../components/HeroModels/HeroExperience.jsx'
 import { useGSAP } from '@gsap/react'

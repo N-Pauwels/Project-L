@@ -1,6 +1,6 @@
 import GlowCard from '../components/GlowCard'
 import TitleHeader from '../components/TitleHeader'
-import { expCards } from '../constants'
+import { skillCards } from '../constants'
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -33,6 +33,18 @@ const MySkills = () => {
             }
         })
 
+        gsap.to('#back-image',{
+            x:300,
+            ease: 'power2.inOut',
+            scrollTrigger:{
+                trigger:'#my-skills',
+                start:'10% 80%',
+                end: '30% 80%',
+                scrub:true,
+            }
+        })
+
+
         gsap.utils.toArray('.expText').forEach((text)=>{
             gsap.from(text, {
                 xPercent: 0,
@@ -49,7 +61,32 @@ const MySkills = () => {
 
 
   return (
-    <section id="my-skills" className="w-full md:mt-40 mt-20 section-padding xl:px-0">
+    <section id="my-skills" className="relative w-full top-0 md:-mt-[24vw] mt-20 section-padding xl:px-0">
+        <div id="back-image" className="about-image-back memory-card mb-20">
+            <div id="inner-card" className="card__inner rounded-3xl border-4 border-amber-500 size-full">
+                <div id="card-0" className="card__face card__face--front size-full">
+                    <img
+                        src="/images/about.webp"
+                        alt="about image"
+                        className=" absolute left-0 top-0 size-full object-cover"
+                    />
+                </div>
+                <div className="card__face card__face--back size-full">
+                    <img
+                        src="/images/cards/singer.png"
+                        alt="singer"
+                        className="absolute left-0 top-0 size-full object-cover"
+                    />
+                </div>
+                {/* <div id="card-1" className="card__face card__face--front size-full">
+                    <img
+                        src="/images/cards/pianist.png"
+                        alt="singer"
+                        className="absolute left-0 top-0 size-full object-cover opacity-0"
+                    />
+                </div> */}
+            </div>
+        </div>
         <div className="w-full h-full md:px-20 px-5">
             <TitleHeader
                 title="The Craft behind the Sound"
@@ -57,16 +94,16 @@ const MySkills = () => {
             />
             <div className="mt-32 relative">
                 <div className="relative z-50 xl:space-y-32 space-y-10">
-                    {expCards.map((card, index)=>(
-                        <div key={index} className="exp-card-wrapper">
+                    {skillCards.map((card, index)=>(
+                        <div key={index} id={`card-box-${index}`} className="exp-card-wrapper">
                             <div className="xl:w-2/6">
                                 <GlowCard
                                     card={card}
                                     index={index}
                                 >
-                                    <div>
+                                    {/* <div>
                                         <img src={card.imgPath} alt={card.title} />
-                                    </div>
+                                    </div> */}
                                 </GlowCard>
                             </div>
                             <div className="xl:w-4/6">
@@ -81,7 +118,7 @@ const MySkills = () => {
                                         </div>
                                         <div>
                                             <h1 className="font-semibold text-3xl">{card.title}</h1>
-                                            <p className="my-5 text-white-50">{card.date}</p>
+                                            {/* <p className="my-5 text-white-50">{card.date}</p>
                                             <p className="text-[#839cb5] italic">
                                                 Responsibilities
                                             </p>
@@ -91,7 +128,7 @@ const MySkills = () => {
                                                         {responsibility}
                                                     </li>
                                                 ))}
-                                            </ul>
+                                            </ul> */}
                                         </div>
                                     </div>
                                 </div>
