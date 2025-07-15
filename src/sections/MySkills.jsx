@@ -83,11 +83,12 @@ const MySkills = () => {
                 rotateY:'180deg',
                 ease: 'slow',
                 scrollTrigger:{
-                    trigger:`#card-box-${index}`,
+                    trigger:`#inner-card-box-${index}`,
                     scrub: true,
-                    start: '-10% 80%',
-                    end: '120% 80%',
+                    start: '-40% 562x',
+                    end: '100% 562px',
                     snap: 1,
+                    markers:true
                 }
             })
         })
@@ -115,13 +116,13 @@ const MySkills = () => {
         <div className="w-full h-full md:px-20 px-5">
             <TitleHeader
                 title="The Craft behind the Sound"
-                sub="Where I shine"
+                sub="Where I thrive"
             />
-            <div className="mt-32 relative">
+            <div className="mt-50 relative">
                 <div className="relative z-50 xl:space-y-32 space-y-10">
                     {skillCards.map((card, index, array)=>(
                         <div key={index} id={`card-box-${index}`} className="exp-card-wrapper">
-                            <div className="xl:w-2/6 min-h-[296px]">
+                            <div  id={`inner-card-box-${index}`} className="xl:w-2/6 min-h-[296px]">
                                 <GlowCard
                                     card={card}
                                     index={index}

@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import {useGSAP} from '@gsap/react'
+import TitleHeader from '../components/TitleHeader'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -47,7 +48,11 @@ const ShowcaseSection = () => {
   return (
     <div id="work" ref={sectionRef} className="app-showcase min-h-screen">
         <div className="w-full">
-            <div className="showcaselayout">
+        <TitleHeader
+                title="A Taste of my Music"
+                sub="Where to listen"
+            />
+            <div className="showcaselayout mt-20 rounded-xl bg-black-50 border-white border-5 p-20">
                 {/* LEFT */}
                 <div className="first-project-wrapper" ref={project1Ref}>
                     <iframe
