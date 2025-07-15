@@ -72,7 +72,7 @@ const ShowcaseSection = () => {
                 {/* RIGHT */}
                 <div className="project-list-wrapper">
                     <div className="project" ref={project2Ref}>
-                        <div className="image-wrapper bg-amber-50">
+                        <div className="image-wrapper  bg-[#ffe7eb]">
                             <iframe
                                 className="border-5 rounded-xl box-content"
                                 src="https://open.spotify.com/embed/track/1wu1Cabk0tcuLkI0FtuHDj?utm_source=generator&theme=0"
