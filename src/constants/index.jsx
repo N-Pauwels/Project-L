@@ -149,7 +149,7 @@ const techStackIcons = [
 const skillCards = [
   {
     name: 'singer',
-    explanation:(<>A voice shaped by emotion and air, bending notes into meaning. The Singer channels the soul’s deepest tides into sound — not just to perform, but to feel out loud. Every breath becomes a canvas, every melody a confession.</>),
+    explanation:(<>A voice shaped by emotion and air, bending notes into meaning. A Singer channels the soul’s deepest tides into sound — not just to perform, but to feel out loud. Every breath becomes a canvas, every melody a confession.</>),
     title:'The Singer',
     imgPath:'/images/cards/singer.png',
     className:'bg-purple-500',
@@ -165,7 +165,7 @@ const skillCards = [
   },
   {
     name: 'producer',
-    explanation:(<>The unseen architect.<br/>The Producer is both sculptor and alchemist, transforming raw sound into atmosphere. Layers of rhythm, silence, and tone are arranged like constellations — guiding the listener through unseen worlds.</>),
+    explanation:(<>The unseen architect.<br/>A Producer is both sculptor and alchemist, transforming raw sound into atmosphere. Layers of rhythm, silence, and tone are arranged like constellations — guiding the listener through unseen worlds.</>),
     title:'The Producer',
     imgPath:'/images/cards/producer.png',
     className:'bg-green-500',
@@ -173,7 +173,7 @@ const skillCards = [
   },
   {
     name: 'pianist',
-    explanation:(<>Ten fingers, eighty-eight keys — yet infinite possibilities.<br/>The Pianist speaks without speaking, shaping harmony and tension into living sculpture. Their touch evokes landscapes: fragile, fierce, and filled with ghosts that dance between notes.</>),
+    explanation:(<>Ten fingers, eighty-eight keys — yet infinite possibilities.<br/>A Pianist speaks without speaking, shaping harmony and tension into living sculpture. Their touch evokes landscapes: fragile, fierce, and filled with ghosts that dance between notes.</>),
     title:'The Pianist',
     imgPath:'/images/cards/pianist.png',
     className:'bg-blue-500',
@@ -181,17 +181,17 @@ const skillCards = [
   },
   {
     name: 'composer',
-    explanation:(<>From chaos, form.<br/>The Composer listens to what isn’t yet real — drawing maps of feeling, time, and motion. They design sound like an architect drafts space: intentionally, spiritually, one heartbeat at a time.</>),
+    explanation:(<>From chaos, form.<br/>A Composer listens to what isn’t yet real — drawing maps of feeling, time, and motion. They design sound like an architect drafts space: intentionally, spiritually, one heartbeat at a time.</>),
     title:'The Composer',
-    imgPath:'/images/cards/pianist.png',
+    imgPath:'/images/cards/composer.png',
     className:'bg-yellow-500',
     color: '#cece45'
   },
   {
     name: 'musician',
-    explanation:(<>The sum of all the fragments.<br/>The Musician is a channel for movement, for memory, for mood. They are the conduit where instrument and instinct blur — creating not just music, but moment.</>),
+    explanation:(<>The sum of all the fragments.<br/>Being a Musician is a channel for movement, for memory, for mood. They are the conduit where instrument and instinct blur — creating not just music, but moment.</>),
     title:'The Musician',
-    imgPath:'/images/cards/pianist.png',
+    imgPath:'/images/cards/musician.png',
     className:'bg-orange-500',
     color: '#d2701b'
   }

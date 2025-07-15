@@ -25,7 +25,7 @@ const App = () => {
       <MySkills/>
       {/* <Experience/> */}
       <ShowcaseSection/>
-      <FeatureCards/>
+      {/* <FeatureCards/> */}
       <TechStack/>
       {!ready && <Loader/>} 
     </>

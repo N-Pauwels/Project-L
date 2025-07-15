@@ -70,6 +70,7 @@ const MySkills = () => {
                 trigger:'#my-skills',
                 start:'80% center',
                 end: 'bottom bottom',
+                scrub: true
             }
         })
 
@@ -81,8 +82,8 @@ const MySkills = () => {
                 scrollTrigger:{
                     trigger:`#card-box-${index}`,
                     scrub: true,
-                    start: '10% 80%',
-                    end: '130% 80%',
+                    start: '-10% 80%',
+                    end: '120% 80%',
                     snap: 1,
                 }
             })
