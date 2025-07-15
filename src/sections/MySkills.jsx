@@ -88,7 +88,6 @@ const MySkills = () => {
                     start: '-40% 562x',
                     end: '100% 562px',
                     snap: 1,
-                    markers:true
                 }
             })
         })
