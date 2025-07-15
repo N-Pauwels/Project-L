@@ -21,7 +21,7 @@ const TechStack = () => {
             ease: 'power2.inOut',
             stagger: 0.2,
             scrollTrigger: {
-                trigger:'#skills',
+                trigger:'#social-media',
                 start: 'top center'
             }
         })

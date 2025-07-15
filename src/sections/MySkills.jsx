@@ -62,17 +62,18 @@ const MySkills = () => {
                 scrub:true,
             }
         })
+        //TODO: animation below causes staggering issues, check if can be solved in other way
 
-        gsap.to('#back-image',{
-            marginBottom: -40,
-            ease: 'power2.inOut',
-            scrollTrigger:{
-                trigger:'#my-skills',
-                start:'80% center',
-                end: 'bottom bottom',
-                scrub: true
-            }
-        })
+        // gsap.to('#back-image',{
+        //     marginBottom: -40,
+        //     ease: 'power2.inOut',
+        //     scrollTrigger:{
+        //         trigger:'#my-skills',
+        //         start:'80% center',
+        //         end: 'bottom bottom',
+        //         scrub: true
+        //     }
+        // })
 
 
         gsap.utils.toArray('.card-deck').forEach((_card, index)=>{
