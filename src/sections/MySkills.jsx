@@ -12,6 +12,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const MySkills = () => {
 
+    //you can use this function to get the gradient based on the constants file, but can't use it directly as a class since tailwind does not work with dynamically constructed classes, it only parses the source file for strings.
+
     function getGradient (arr){
         const reverse = arr.toReversed();
         const gradient = reverse.reduce((acc, el, index, array)=>{
@@ -130,7 +132,7 @@ const MySkills = () => {
                                 <div className="flex items-start">
                                     <div className="timeline-wrapper">
                                         <div className="timeline"/>
-                                        <div className={`${getGradient(array)} w-1 h-full`}/>
+                                        <div className="bg-linear-[0deg,rgba(69,222,196,0)_0%,#d2701b_16.67%,#cece45_33.33%,#62e0ff_50.00%,#36dc49_66.67%,#fd5c79_83.33%,#6d45ce_100.00%] w-1 h-full"/>
                                     </div>
                                     <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
                                         <div className={`timeline-logo ${card.className}`} >

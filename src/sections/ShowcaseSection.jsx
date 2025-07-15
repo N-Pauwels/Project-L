@@ -55,7 +55,7 @@ const ShowcaseSection = () => {
                         src="https://open.spotify.com/embed/album/2aFjv03gpQkOouFSmeYKcH?utm_source=generator"
                         // width="100%"
                         // height="100%"
-                        allowfullscreen=""
+                        allowFullScreen=""
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                         loading="lazy">
                     </iframe>
@@ -76,7 +76,7 @@ const ShowcaseSection = () => {
                             <iframe
                                 className="border-5 rounded-xl box-content"
                                 src="https://open.spotify.com/embed/track/1wu1Cabk0tcuLkI0FtuHDj?utm_source=generator&theme=0"
-                                allowfullscreen=""
+                                allowFullScreen=""
                                 height="152"
                                 width="100%"
                                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -90,7 +90,7 @@ const ShowcaseSection = () => {
                             <iframe
                                 className="border-5 rounded-xl box-content"
                                 src="https://open.spotify.com/embed/track/7wQw9GBdprURKVtMj7jGxA?utm_source=generator&theme=0"
-                                allowfullscreen=""
+                                allowFullScreen=""
                                 height="152"
                                 width="100%"
                                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
