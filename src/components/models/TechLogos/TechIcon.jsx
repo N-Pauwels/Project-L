@@ -18,11 +18,12 @@ const TechIcon = ( {model} ) => {
     },[])
 
   return (
+    <a href={model.url} target="_blank">
     <Canvas>
         <ambientLight intensity={0.3}/>
         <directionalLight position={[5,5,5]} intensity={1}/>
         <Environment preset="city" />
-        <OrbitControls enableZoom={false}/>
+        {/* <OrbitControls enableZoom={false}/> */}
 
         <Float speed={5.5} rotationIntensity={0.5} floatIntensity={0.9}>
             <group scale={model.scale} rotation={model.rotation} position={model.position}>
@@ -30,6 +31,7 @@ const TechIcon = ( {model} ) => {
             </group>
         </Float>
     </Canvas>
+    </a>
   )
 }
 

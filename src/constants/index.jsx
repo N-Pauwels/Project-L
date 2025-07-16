@@ -23,19 +23,22 @@ const techStackIcons = [
     modelPath: "/models/tiktok_logo.glb",
     scale: 8,
     rotation: [0, 0, 0],
-    position:[-5.5,-2.5,0]
+    position:[-5.5,-2.5,0],
+    url: "https://www.tiktok.com/@lamoon_music"
   },
   {
     name: "Spotify",
     modelPath: "/models/spotify.glb",
     scale: 2,
     rotation: [0, 0, 0],
+    url: "https://open.spotify.com/artist/3IL8sptESmI5Si0OoerfH0"
   },
   {
     name: "Instagram",
     modelPath: "/models/instagram.glb",
     scale: 2,
     rotation: [0, -Math.PI / 2, 0],
+    url: "https://www.instagram.com/lamoon_music/"
   },
 ];
 
