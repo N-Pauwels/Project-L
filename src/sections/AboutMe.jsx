@@ -11,7 +11,7 @@ const AboutMe = () => {
                     <h1 className="cinzel-epic moon-cover-right -ms-45 md:-ms-80">LAMOON</h1>
                 </div>
             </div>
-            <div className="mt-70 md:mt-40 mx-10 md:mx-20 md:grid md:grid-cols-2">
+            <div className="mt-65 md:mt-40 mx-5 md:mx-20 md:grid md:grid-cols-2">
                 <div>
                     <p className="text-white-50 text-lg">
                         Lamoon's musical roots lie in classical piano—a love that has never left him.

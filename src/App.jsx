@@ -23,7 +23,9 @@ const App = () => {
 
   return (
     <>
-      <NavBar/>
+      <NavBar
+        media={media}
+      />
       <NewHero
         ready={ready}
         setReady={setReady}
