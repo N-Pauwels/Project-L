@@ -70,7 +70,7 @@ const GlowCard = ({card , children, index}) => {
   return (
     <div
         ref={cardRef}
-        className="card card-border timeline-card rounded-xl p-10"
+        className="card card-border timeline-card rounded-xl p-5 md:p-10"
     >
         <div className="glow"/>
         {/* <div className="flex items-center gap-1 mb-5">

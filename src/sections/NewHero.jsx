@@ -7,8 +7,15 @@ import Button from '../components/Button.jsx'
 
 gsap.registerPlugin(ScrollTrigger);
 
-const NewHero = ({ready, setReady}) => {
+const NewHero = ({ready, setReady, media}) => {
     const screenWidth = window.screen.width;
+    const {isMobile} = media
+
+    function snapPositions (isMobile) {
+        if (isMobile) return [0,0.52,1]
+        else return [0,0.52,1]
+    }
+
     useGSAP(()=>{
         const tl = gsap.timeline({scrollTrigger:{
             trigger:"#new-hero",
@@ -34,7 +41,7 @@ const NewHero = ({ready, setReady}) => {
             scrollTrigger:{
                 trigger:"#new-hero",
                 start:"top 5%",
-                snap:{snapTo:[0,0.52,1]}
+                snap:{snapTo:snapPositions(isMobile)}
             }
         })
     },[])
@@ -45,12 +52,12 @@ const NewHero = ({ready, setReady}) => {
             <img src="/images/bg.png" alt="background"/>
         </div>
         <div className="text-7xl sm:text-9xl">
-            <div id="text-la" className="absolute top-40 left-5 sm:left-50 flex flex-row">
+            <div id="text-la" className="absolute top-10 xl:top-40 left-5 flex flex-row">
                 <h1 className="cinzel-epic">LAMOON</h1>
                 <div className="absolute right-1 bg-white w-full h-[90%] top-1 moon-cover-right"/>
                 <div className="absolute bg-black w-full h-full moon-cover-right"/>
             </div>
-            <div id="text-moon" className="absolute bottom-[60%] md:bottom-[57%] xl:bottom-[60%] right-5 sm:right-10 flex flex-row">
+            <div id="text-moon" className="absolute bottom-[70%] md:bottom-[65%] xl:bottom-[60%] right-5 sm:right-10 flex flex-row">
                 <h1 className="cinzel-epic">LAMOON</h1>
                 <div className="absolute left-2 bg-white w-full h-[90%] top-1 moon-cover-left"/>
                 <div className="absolute bg-black w-full h-full moon-cover-left"/>
@@ -60,15 +67,18 @@ const NewHero = ({ready, setReady}) => {
             <MoonExperience
                 ready={ready}
                 setReady={setReady}
+                media = {media}
             />
         </div>
-        <Button
-            className="absolute bottom-[60%] w-100 h-12"
-            id="button"
-            text="See more below"
-            scrollId='about-me'
-            offset={-window.innerHeight * 0.01}
-        />
+        <div className="absolute flex justify-center xl:left-20 bottom-[62%] md:bottom-[60%] w-full xl:w-100 h-12">
+            <Button
+                className="w-[90%] md:w-[70%]"
+                id="button"
+                text="See more below"
+                scrollId='about-me'
+                offset={-window.innerHeight * 0.01}
+            />
+        </div>
         <AboutMe/>
     </section>
   )

@@ -52,18 +52,22 @@ const ShowcaseSection = () => {
                 title="A Taste of my Music"
                 sub="Where to listen"
             />
-            <div className="showcaselayout mt-20 rounded-xl bg-black-50 border-white border-5 p-20">
+            <div className="showcaselayout mt-20 rounded-xl bg-black-50 border-white border-5 p-5 md:p-20">
                 {/* LEFT */}
                 <div className="first-project-wrapper" ref={project1Ref}>
-                    <iframe
-                        className="border-2 rounded-xl h-full"
-                        src="https://open.spotify.com/embed/album/2aFjv03gpQkOouFSmeYKcH?utm_source=generator"
-                        // width="100%"
-                        // height="100%"
-                        allowFullScreen=""
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                        loading="lazy">
-                    </iframe>
+                    <div className="project box-content">
+                        <div className="image-wrapper bg-[#ffe7eb] md:bg-transparent">
+                            <iframe
+                                className="border-5 rounded-xl box-content"
+                                src="https://open.spotify.com/embed/album/2aFjv03gpQkOouFSmeYKcH?utm_source=generator"
+                                width="100%"
+                                height="400"
+                                allowFullScreen=""
+                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
                     {/* <div className="image-wrapper">
                         <img src="/images/project1.png" alt="Ryde" />
                     </div> */}
@@ -76,8 +80,8 @@ const ShowcaseSection = () => {
                 </div>
                 {/* RIGHT */}
                 <div className="project-list-wrapper">
-                    <div className="project" ref={project2Ref}>
-                        <div className="image-wrapper  bg-[#ffe7eb]">
+                    <div className="project box-content" ref={project2Ref}>
+                        <div className="image-wrapper bg-[#ffe7eb]">
                             <iframe
                                 className="border-5 rounded-xl box-content"
                                 src="https://open.spotify.com/embed/track/1wu1Cabk0tcuLkI0FtuHDj?utm_source=generator&theme=0"

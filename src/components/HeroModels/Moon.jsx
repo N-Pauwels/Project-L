@@ -14,18 +14,6 @@ const Moon = forwardRef(({setReady, ...props}, ref) => {
         normalMap: normalTexture,
       })
 
-    // useEffect(()=>{
-    //   if(initialRender)
-    //     mesh.current.onAfterRender = null;
-      
-    // },[initialRender])
-
-    // const afterRender = ()=>{
-    //     console.log('after render')
-    //     setReady(true);
-    //     mesh.current.onAfterRender = null;
-    //   }
-
   useEffect(() => {
     const mesh = meshRef.current;
     if (!mesh) return;
@@ -46,7 +34,6 @@ const Moon = forwardRef(({setReady, ...props}, ref) => {
     <group ref={ref} {...props} dispose={null}>
         <mesh
             ref={meshRef}
-            // onAfterRender={afterRender}
             geometry={sphere}
             material={moon}
         />

@@ -10,23 +10,25 @@ import CardCarousel from "../components/CardCarousel"
 gsap.registerPlugin(CustomEase);
 gsap.registerPlugin(ScrollTrigger);
 
-const MySkills = () => {
+const MySkills = ({media}) => {
+    const screenWidth = window.screen.width;
+    const {isMobile} = media
 
     //you can use this function to get the gradient based on the constants file, but can't use it directly as a class since tailwind does not work with dynamically constructed classes, it only parses the source file for strings.
 
-    function getGradient (arr){
-        const reverse = arr.toReversed();
-        const gradient = reverse.reduce((acc, el, index, array)=>{
-            const {color} = el;
-            const length = array.length;
-            const percentage = (100 / length * (index + 1)).toFixed(2);
-            let newStr = acc.concat(color,"_",percentage,"%");
-            newStr = index + 1 === length ? newStr.concat("]") : newStr.concat(",");
-            return newStr
+    // function getGradient (arr){
+    //     const reverse = arr.toReversed();
+    //     const gradient = reverse.reduce((acc, el, index, array)=>{
+    //         const {color} = el;
+    //         const length = array.length;
+    //         const percentage = (100 / length * (index + 1)).toFixed(2);
+    //         let newStr = acc.concat(color,"_",percentage,"%");
+    //         newStr = index + 1 === length ? newStr.concat("]") : newStr.concat(",");
+    //         return newStr
 
-        },"bg-linear-[0deg,rgba(69,222,196,0)_0%,")
-        return gradient
-    }
+    //     },"bg-linear-[0deg,rgba(69,222,196,0)_0%,")
+    //     return gradient
+    // }
 
     useGSAP(()=>{
         gsap.utils.toArray('.timeline-card').forEach((card)=>{
@@ -54,43 +56,46 @@ const MySkills = () => {
             }
         })
 
-        gsap.to('#back-image',{
-            x:350,
-            ease: 'power2.inOut',
-            scrollTrigger:{
-                trigger:'#my-skills',
-                start:'10% 80%',
-                end: '30% 80%',
-                scrub:true,
-            }
-        })
-        //TODO: animation below causes staggering issues, check if can be solved in other way
+        if(!isMobile){
 
-        // gsap.to('#back-image',{
-        //     marginBottom: -40,
-        //     ease: 'power2.inOut',
-        //     scrollTrigger:{
-        //         trigger:'#my-skills',
-        //         start:'80% center',
-        //         end: 'bottom bottom',
-        //         scrub: true
-        //     }
-        // })
+            gsap.to('#back-image',{
+                x: screenWidth / 4,
+                ease: 'power2.inOut',
+                scrollTrigger:{
+                    trigger:'#my-skills',
+                    start:'10% 80%',
+                    end: '30% 80%',
+                    scrub:true,
+                }
+            })
+            //TODO: animation below causes staggering issues, check if can be solved in other way
 
+            // gsap.to('#back-image',{
+            //     marginBottom: -40,
+            //     ease: 'power2.inOut',
+            //     scrollTrigger:{
+            //         trigger:'#my-skills',
+            //         start:'80% center',
+            //         end: 'bottom bottom',
+            //         scrub: true
+            //     }
+            // })
 
-        gsap.utils.toArray('.card-deck').forEach((_card, index)=>{
+            gsap.utils.toArray('.card-deck').forEach((_card, index)=>{
             gsap.to(`#inner-card-${index}`,{
                 rotateY:'180deg',
                 ease: 'slow',
                 scrollTrigger:{
                     trigger:`#inner-card-box-${index}`,
                     scrub: true,
-                    start: '-40% 562x',
-                    end: '100% 562px',
+                    start: '-40% 562x', //200px margin top + height of card (362px)
+                    end: '100% 562px', //200px margin top + height of card (362px)
                     snap: 1,
                 }
             })
         })
+
+        }
 
         gsap.utils.toArray('.expText').forEach((text)=>{
             gsap.from(text, {
@@ -108,20 +113,20 @@ const MySkills = () => {
 
 
   return (
-    <section id="my-skills" className="relative w-full top-0 md:-mt-[24vw] mt-20 section-padding xl:px-0">
-        <div id="back-image" className="about-image-back memory-card mb-20">
+    <section id="my-skills" className="relative w-full top-0 md:-mt-[50vh] mt-20 section-padding xl:px-0">
+        <div id="back-image" className="hidden md:block about-image-back memory-card mb-40">
             <CardCarousel/>
         </div>
-        <div className="w-full h-full md:px-20 px-5">
+        <div className="w-full h-full xl:px-20 md:pe-[35vw] px-5">
             <TitleHeader
                 title="The Craft behind the Sound"
                 sub="Where I thrive"
             />
-            <div className="mt-50 relative">
-                <div className="relative z-50 xl:space-y-32 space-y-10">
+            <div className="mt-20 md:mt-50 relative">
+                <div className="relative z-50 xl:space-y-32 md:space-y-10 space-y-5">
                     {skillCards.map((card, index, array)=>(
                         <div key={index} id={`card-box-${index}`} className="exp-card-wrapper">
-                            <div  id={`inner-card-box-${index}`} className="xl:w-2/6 min-h-[296px]">
+                            <div  id={`inner-card-box-${index}`} className="xl:ps-auto md:ps-20 ps-10 xl:w-2/6 min-h-[296px]">
                                 <GlowCard
                                     card={card}
                                     index={index}

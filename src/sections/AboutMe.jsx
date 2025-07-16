@@ -3,15 +3,15 @@ const AboutMe = () => {
   return (
     <section id="about-me" className="relative">
         <div className="h-screen w-full">
-            <div className="sticky top-20 text-7xl sm:text-9xl flex flex-row justify-start mx-20">
+            <div className="bg-black md:bg-transparent sticky top-15 h-[10vh] md:h-auto text-7xl sm:text-9xl flex flex-row items-end justify-start mx-5 md:mx-20">
                 <div id="text-la-head" className="relative">
-                    <h1 className="bg-black cinzel-epic moon-cover-left -me-80">LAMOON</h1>    
+                    <h1 className="bg-black cinzel-epic moon-cover-left -me-45 md:-me-80">LAMOON</h1>    
                 </div>
                 <div id="text-moon-head" className="relative">
-                    <h1 className="cinzel-epic moon-cover-right -ms-80">LAMOON</h1>
+                    <h1 className="cinzel-epic moon-cover-right -ms-45 md:-ms-80">LAMOON</h1>
                 </div>
             </div>
-            <div className="mt-40 mx-20 grid grid-cols-2">
+            <div className="mt-70 md:mt-40 mx-10 md:mx-20 md:grid md:grid-cols-2">
                 <div>
                     <p className="text-white-50 text-lg">
                         Lamoon's musical roots lie in classical piano—a love that has never left him.

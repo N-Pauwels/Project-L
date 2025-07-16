@@ -1,5 +1,4 @@
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { useMediaQuery } from 'react-responsive';
 import MoonLights from './MoonLights';
 import Particles from './Particles';
 import { Suspense, useEffect, useRef, useCallback, useState } from 'react';
@@ -14,19 +13,17 @@ import { Preload } from '@react-three/drei';
 gsap.registerPlugin(ScrollTrigger);
 
 
-const MoonExperience = ({ready, setReady}) => {
-
-    const onCreate = ()=>{
-        setReady(true);
-    }
+const MoonExperience = ({ready, setReady, media}) => {
+    
+    const {isMobile, isSM, isMD, isLG, isXL, is2XL} = media
 
     const moon = useCallback((node)=>{
             if (!node) return
             // console.log('Start:', moon.current.position.x)
             gsap.to(node.position,{  
-                x: 12,
+                x: isMD? 4 : 12,
                 z: -10,
-                y:-2,
+                y: isMD? 0 : -2,
                 scrollTrigger:{
                     trigger:'#new-hero',
                     start:'top 10% ',
@@ -35,14 +32,12 @@ const MoonExperience = ({ready, setReady}) => {
             })
     },[])
 
-    const moonAbove = useMediaQuery({query: '(max-width: 1366px'});
-    const isMobile = useMediaQuery({query: '(max-width: 1024px'});
     const moonFunc = () =>{
         if(isMobile){
-            return {position:[0,0,0], scale:0.25}
+            return {position:[0,1.5,0], scale:0.25}
         }
-        else if(moonAbove) {
-            return {position:[5,3,0], scale:0.35}
+        else if(isSM || isMD) {
+            return {position:[0,1.9,0], scale:0.25}
         }
         else{
             return {position:[-2,0,0], scale:0.35}
@@ -53,7 +48,6 @@ const MoonExperience = ({ready, setReady}) => {
   return (
     <>
         <Canvas
-            // onCreated={onCreate}
             camera={{position:[0,0,15], fov:45}}
         >
             <Suspense>

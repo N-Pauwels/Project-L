@@ -9,7 +9,7 @@ const Picture = () => {
   useGSAP(()=>{
     const clipAnimation = gsap.timeline({scrollTrigger:{
       trigger:'#clip',
-      start: '25% center',
+      start: 'top 25%',
       end:'+=800 center',
       scrub: true,
       pin: true,
@@ -23,7 +23,7 @@ const Picture = () => {
       borderWidth: 0
     })
     .to('.mask-clip-path',{
-      opacity:0,
+      // opacity:0,
       duration:0
     },'>')
     .to('#back-image',{
@@ -35,11 +35,11 @@ const Picture = () => {
   
   return (
     <div id="picture" className="relative min-h-screen w-screen">
-      <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
+      <div className="relative mb-8 mt-20 md:mt-36 flex flex-col items-center gap-5">
         <h2 className="font-cinzel text-xl">
           Welcome to my site
         </h2>
-        <div className="mt-5 text-center text-4xl leading-[0.8] md:text-[6rem]">
+        <div className="md:mt-5 text-center text-4xl leading-[0.8] md:text-[6rem]">
           Discover my passion for music
         </div>
       </div>
