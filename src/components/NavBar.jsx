@@ -85,8 +85,8 @@ const NavBar = ({media}) => {
             <nav className="h-[20vh] w-[30vw] flex flex-col justify-center mt-5 me-10 ms-2 mb-2">
                 <ul>
                     {navLinks.map(({link, name})=>(
-                        <li key={name} className="flex items-center justify-center px-2 mt-3 bg-black-50 border-black-100 border-1 rounded-2xl group ">
-                            <a href={link} className="w-full h-full text-center border-black-100 border-1 rounded-2xl focus:bg-black-200 active:bg-black-200">
+                        <li key={name} className="flex items-center justify-center px-2 mt-3 bg-black-50 border-black-100 border-1 rounded-2xl group active:bg-black-200">
+                            <a href={link} className="w-full h-full text-center border-black-100 border-1 rounded-2xl focus:bg-black-200">
                                 <span className="group-hover:text-blue-50 group-active:text-blue-50">{name}</span>
                                 <span className="underline"/>
                             </a>
