@@ -6,11 +6,14 @@ import TitleHeader from '../components/TitleHeader'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const ShowcaseSection = () => {
+const ShowcaseSection = ({media}) => {
     const sectionRef = useRef(null);
     const project1Ref = useRef(null);
     const project2Ref = useRef(null);
     const project3Ref = useRef(null);
+
+    const {isMobile, isSM, isMD} = media
+    const isSmall = isMobile || isSM ||isMD;
     
     useGSAP(()=>{
         const projects = [project1Ref.current, project2Ref.current, project3Ref.current]
@@ -52,10 +55,18 @@ const ShowcaseSection = () => {
                 title="A Taste of my Music"
                 sub="Where to listen"
             />
-            <div className="showcaselayout mt-20 rounded-xl bg-black-50 border-white border-5 p-5 md:p-20">
+            <div className="showcaselayout mt-20 rounded-xl bg-black-50 border-white border-5 p-5 xl:p-20">
                 {/* LEFT */}
                 <div className="first-project-wrapper" ref={project1Ref}>
                     <div className="project box-content">
+                        {isSmall && 
+                            <div className="text-content text-center xl:text-left">
+                                <h2>Check out my EP on spotify.</h2>
+                                <p className="text-white-50 mb-10 md:text-xl">
+                                    You might just like it.
+                                </p>
+                            </div>
+                        }
                         <div className="image-wrapper bg-[#ffe7eb] md:bg-transparent">
                             <iframe
                                 className="border-5 rounded-xl box-content"
@@ -67,19 +78,21 @@ const ShowcaseSection = () => {
                                 loading="lazy">
                             </iframe>
                         </div>
-                    </div>
-                    {/* <div className="image-wrapper">
-                        <img src="/images/project1.png" alt="Ryde" />
-                    </div> */}
-                    <div className="text-content">
-                        <h2>Check out my EP on spotify.</h2>
-                        <p className="text-whitee-50 md:text-xl">
-                            You might just like it.
-                        </p>
+                        {/* <div className="image-wrapper">
+                            <img src="/images/project1.png" alt="Ryde" />
+                        </div> */}
+                        {!isSmall &&
+                            <div className="text-content text-center xl:text-left">
+                                <h2>Check out my EP on spotify.</h2>
+                                <p className="text-white-50 md:text-xl">
+                                    You might just like it.
+                                </p>
+                            </div>
+                        }
                     </div>
                 </div>
                 {/* RIGHT */}
-                <div className="project-list-wrapper">
+                <div className="project-list-wrapper mt-20 xl:mt-0">
                     <div className="project box-content" ref={project2Ref}>
                         <div className="image-wrapper bg-[#ffe7eb]">
                             <iframe
@@ -92,10 +105,10 @@ const ShowcaseSection = () => {
                                 loading="lazy">
                             </iframe>
                         </div>
-                        <h2>My most popular song</h2>
+                        <h2 className="text-center xl:text-left">My most popular song</h2>
                     </div>
                     <div className="project" ref={project3Ref}>
-                        <div className="image-wrapper bg-[#ffe7eb]">
+                        <div className="image-wrapper bg-[#ffe7eb] mt-10 xl:mt-0">
                             <iframe
                                 className="border-5 rounded-xl box-content"
                                 src="https://open.spotify.com/embed/track/7wQw9GBdprURKVtMj7jGxA?utm_source=generator&theme=0"
@@ -106,7 +119,7 @@ const ShowcaseSection = () => {
                                 loading="lazy">
                             </iframe>
                         </div>
-                        <h2>My favourite song</h2>
+                        <h2 className="text-center xl:text-left">My favourite song</h2>
                     </div>
                 </div>
             </div>

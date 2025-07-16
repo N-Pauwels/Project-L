@@ -35,7 +35,9 @@ const App = () => {
         media={media}
       />
       {/* <Experience/> */}
-      <ShowcaseSection/>
+      <ShowcaseSection
+        media={media}
+      />
       {/* <FeatureCards/> */}
       <TechStack/>
       {!ready && <Loader/>} 

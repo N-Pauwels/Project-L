@@ -22,14 +22,13 @@ const TechStack = () => {
             stagger: 0.2,
             scrollTrigger: {
                 trigger:'#social-media',
-                start: 'top center',
-                markers:true
+                start: 'top center'
             }
         })
     },[])
 
   return (
-    <div id="social-media" className="flex-center px-5 md:px-10 xl:mb-10 mb-50">
+    <div id="social-media" className="flex-center px-5 md:px-10 xl:mb-10 md:mb-50 mb-20">
         <div className="w-full h-full md:px-10 px-5">
             <TitleHeader
                 title="Social Media"
