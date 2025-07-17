@@ -75,7 +75,7 @@ const ShowcaseSection = ({media}) => {
                                 height="400"
                                 allowFullScreen=""
                                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                                loading="lazy">
+                                loading="eager">
                             </iframe>
                         </div>
                         {/* <div className="image-wrapper">
@@ -102,7 +102,7 @@ const ShowcaseSection = ({media}) => {
                                 height="152"
                                 width="100%"
                                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                                loading="lazy">
+                                loading="eager">
                             </iframe>
                         </div>
                         <h2 className="text-center xl:text-left">My most popular song</h2>
@@ -116,7 +116,7 @@ const ShowcaseSection = ({media}) => {
                                 height="152"
                                 width="100%"
                                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                                loading="lazy">
+                                loading="eager">
                             </iframe>
                         </div>
                         <h2 className="text-center xl:text-left">My favourite song</h2>
